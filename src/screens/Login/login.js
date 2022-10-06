@@ -30,7 +30,7 @@ export default function Login() {
         style={{
           margemtop: 10,
           width: "auto",
-          height: 300,
+          height: 350,
           alignItems: "center",
         }}
       />
@@ -89,7 +89,4 @@ const styles = StyleSheet.create({
     color: "#96BB48",
     fontSize: 17,
   },
-  Button: {
-    borderRadius:5
-  }
 });

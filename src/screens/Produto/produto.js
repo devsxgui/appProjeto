@@ -20,6 +20,29 @@ export default function AppForm() {
   const [imagem, setImagem] = useState('');
   const inputRef = useRef(null);
   const [key, setKey] = useState('');
+  const [produtos, setProdutos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function dados() {
+      await firebase.database().ref('produtos').on('value', (snapshot) => {
+        setProdutos([]);
+        snapshot.forEach((chilItem) => {
+          let data = {
+            key: chilItem.key,
+            nome: chilItem.val().nome,
+            marca: chilItem.val().marca,
+            valor: chilItem.val().valor,
+            cor: chilItem.val().cor,
+          };
+          setProdutos(oldArray => [...oldArray, data].reverse());
+        })
+        setLoading(false);
+      })
+    }
+    dados();
+  }, []);
+
   async function cadastrar() { //criação da função cadastrar
     //função async é quando tu manda uma ação, processa algo e devolve, é assincrono
 

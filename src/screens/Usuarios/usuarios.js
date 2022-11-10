@@ -8,22 +8,22 @@ export default function App() {
     return (
         <View style={styles.container}>
             <form>
-                <label>
+                <label style={styles.label}>
                     Nome do Usuário:
                     <input style={styles.input} type="text" name="nomeusuario" />
                 </label>
                 <br/>
-                <label>
+                <label style={styles.label}>
                     E-mail:
                     <input style={styles.input}  type="text" name="email" />
                 </label>
                 <br/>
-                <label>
+                <label style={styles.label}>
                     Senha:
                     <input style={styles.input}  type="text" name="senha" />
-                </label>
+                </label >
                 <br/>
-                <input type="submit" value="Enviar" />
+                <input type="submit" value="Enviar" style={styles.button} />
             </form>
         </View>
     );
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#fff"
+        backgroundColor: "#E2F0C4"
     },
 
     input:{
@@ -48,7 +48,21 @@ const styles = StyleSheet.create({
         padding: 10,
         borderWidth: 1,
         alignItems:'center',
-        borderColor: '#141414',
-        borderRadius: 20,
+        borderColor: '#96BB48',
+    },
+
+    label: {
+        fontSize: 20,
+    },
+
+    button: {
+        alignSelf: "center",
+        alignItems: "center",
+        justifyContent: "center",
+        height: 45,
+        width: 100,
+        marginBottom: 20,
+        backgroundColor: "#96BB48",
+        borderRadius: 10,
     }
 })

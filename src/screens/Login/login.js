@@ -16,8 +16,8 @@ import firebase from "../../services/connectionFirebase";
 
 const rootElement = document.getElementById("root");
 
-function onPressMenuTabs(){
-  const root = hydrateRoot (rootElement, <MenuTabs />);
+function onPressMenuTabs() {
+  const root = hydrateRoot(rootElement, <MenuTabs />);
 }
 
 export default function Login({ changeStatus }) {
@@ -56,9 +56,9 @@ export default function Login({ changeStatus }) {
       <Image
         source={Logo}
         style={{
-          margemtop: 10,
+          margemtop: 5,
           width: "auto",
-          height: 350,
+          height: 200,
           alignItems: "center",
         }}
       />
@@ -87,7 +87,7 @@ export default function Login({ changeStatus }) {
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity color="#96BB48" onPress={() => setType(type => type === 'login' ? 'cadastrar' : 'login')} >
+      <TouchableOpacity color="#96BB48" onPress={() => setType(type => type === 'login' ? 'cadastrar' : 'login')} style={styles.cadastrar} >
         <Text style={{ textAlign: 'center' }}>
           {type === 'login' ? 'Criar uma conta' : 'Já possuo uma conta'}
         </Text>
@@ -121,11 +121,22 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     height: 45,
-    marginBottom: 10,
+    width: 100,
+    marginBottom: 20,
     color: "#fff",
+    borderRadius: 10,
   },
   loginText: {
     color: "#000",
     fontSize: 17,
+  },
+  cadastrar: {
+    alignSelf: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#96BB48",
+    borderRadius: 10,
+    height: 45,
+    width: 200,
   },
 });

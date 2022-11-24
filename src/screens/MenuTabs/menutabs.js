@@ -14,7 +14,7 @@ function ListScreen() {
 }
 
 function PostScreen() {
-  return <View style={styles.container}></View>;
+  return (<Produto/>);
 }
 
 function NotificationsScreen() {
@@ -61,7 +61,7 @@ export default function App() {
       >
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Listar" component={ListScreen} />
-        <Tab.Screen name="Produtos" component={Produto} />
+        <Tab.Screen name="Produtos" component={PostScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

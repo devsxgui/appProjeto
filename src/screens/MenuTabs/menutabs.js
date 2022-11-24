@@ -4,13 +4,14 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/Ionicons";
 import Produto from "../Produto/produto";
+import Usuario from "../Usuarios/usuarios";
 
 function HomeScreen() {
   return <View style={styles.container}></View>;
 }
 
 function ListScreen() {
-  return <View style={styles.container}></View>;
+  return (<Usuario/>)
 }
 
 function PostScreen() {
@@ -39,7 +40,7 @@ export default function App() {
               case "Home":
                 iconName = "home";
                 break;
-              case "Listar":
+              case "Perfil":
                 iconName = "list";
                 break;
               case "Produtos":
@@ -60,7 +61,7 @@ export default function App() {
         }}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Listar" component={ListScreen} />
+        <Tab.Screen name="Perfil" component={ListScreen} />
         <Tab.Screen name="Produtos" component={PostScreen} />
       </Tab.Navigator>
     </NavigationContainer>
